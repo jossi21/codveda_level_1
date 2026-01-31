@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background-color: #888b8e;
+}
+h1 {
+  font-size: 2.5rem;
+}
+header,
+.operation__div {
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 40px;
+  margin: 40px auto;
+  background-color: rgb(236, 236, 237);
+  max-width: 750px;
+  height: auto;
+}
+
+header {
+  text-align: center;
+}
+
+.operation__div {
+  padding-top: 40px;
+  height: auto;
+}
+
+.API__status {
+  border-radius: 7px;
+  background-color: #e0e2e5;
+  padding: 15px;
+  border-left: solid 5px blue;
+}
+
+.API__status span {
+  font-weight: lighter;
+}
+
+/* operation div */
+.operation__div form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.operation__div form label {
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding-left: 5px;
+}
+
+.operation__div form label:last-of-type {
+  padding-top: 20px;
+}
+.operation__div form input {
+  padding: 12px 18px;
+  border-radius: 5px;
+  border: none;
+}
+
+.operation__div form input:focus {
+  border: blue 1.5px solid;
+  outline: none;
+}
+
+/* api buttons */
+.api__buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.api__buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.all__btn {
+  background-color: rgb(40, 119, 203);
+}
+
+.one__btn {
+  background-color: aqua;
+}
+
+.update__btn {
+  background-color: rgb(255, 111, 0);
+}
+.delete__btn {
+  background-color: red;
+}
+.add__btn {
+  background-color: rgb(40, 167, 69);
+}
+
+/* Base URL */
+.baseUrl__update__btn {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(40, 119, 203);
+}
+
+/* course list section */
+.course__list__div {
+  border-radius: 7px;
+  padding: 40px 40px;
+  margin: 40px auto;
+  background-color: rgb(246, 246, 249);
+  max-width: 750px;
+  min-height: 30vh;
+}
+
+.course__list__div__header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.course__list__div__header button {
+  cursor: pointer;
+  padding: 8px 12px;
+  background-color: rgb(40, 119, 203);
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-weight: bold;
+}
+
+/* additional information section */
+.data__section {
+  padding-bottom: 30px;
+  max-width: 650px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.data__section button {
+  background-color: #e0e2e5;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 7px;
+}
+
+/* API status style */
+.status {
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.status-success {
+  background: #c6f6d5;
+  color: #22543d;
+  border: 1px solid #9ae6b4;
+}
+
+.status-error {
+  background: #fed7d7;
+  color: #742a2a;
+  border: 1px solid #fc8181;
+}
+
+/* fetched data style */
+.homeUrl__fetched__data {
+  padding: 10px;
+  overflow-x: hidden;
+  background: #f3f3f3;
+  height: auto;
+  width: 750px;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background-color: rgb(19, 18, 18);
+}
+
+/* fetch data style */
+.fetch__data__header {
+  display: grid;
+  grid-template-columns: 120px 150px 250fr 1fr;
+  text-align: start;
+  margin: 0 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.edit__delete__header {
+  display: flex;
+  justify-content: end;
+  gap: 25px;
+}
+.fetched__data__container {
+  background-color: #ecf1ee;
+  border: none;
+  border-radius: 7px;
+  padding: 12px 15px;
+  margin: 0 10px 10px;
+  display: grid;
+  grid-template-columns: 120px 150px 250fr 1fr;
+}
+
+.edit__delete__btn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  gap: 50px;
+  padding: 0 4px;
+  color: #ef5006;
+}
+.edit__delete__btn i {
+  cursor: pointer;
+}
+
+/* media responsive */
+@media (max-width: 415px) {
+  .api__buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .api__buttons button {
+    padding: 2px 4px;
+  }
+  /* course list section */
+  .course__list__div {
+    padding: 10px 10px;
+    margin: 5px;
+  }
+  .course__list__div__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

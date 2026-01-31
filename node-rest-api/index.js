@@ -3,10 +3,11 @@ require("dotenv").config();
 
 // importing express module
 const express = require("express");
-
+const cors = require("cors");
 // initialize our app
 const app = express();
 
+app.use(cors());
 // Declaring our PORT
 const PORT = process.env.PORT;
 
@@ -69,7 +70,7 @@ app.get("/api/courses/:course_code", (req, res) => {
     const course = courses.find(
       (c) => c.course_code === req.params.course_code,
     );
-    console.log(course);
+    // console.log(course);
 
     // if it is invalid course_code
     if (!course) {
@@ -97,7 +98,7 @@ app.post("/api/courses", (req, res) => {
     const { course_id, course_code, course_name } = req.body;
 
     // make some validation
-    if (!course_id || !course_code || !course_name) {
+    if (!course_code || !course_name) {
       return res.status(400).json({
         success: false,
         error: "Please provide course_id, course_code and course_name",
